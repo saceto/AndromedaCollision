@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andromeda Collision</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;color:#cfe;font-family:"Courier New",monospace}
+  #wrap{position:relative;width:min(100vw,calc(100vh*4/3));aspect-ratio:4/3;margin:0 auto}
+  canvas{width:100%;height:100%;display:block;background:#000;image-rendering:pixelated}
+  #select{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2vmin;background:rgba(0,0,8,.88)}
+  #select h1{margin:0;font-size:5vmin;letter-spacing:.5vmin;color:#fff;text-shadow:0 0 1.5vmin #6cf}
+  #select p{margin:0;font-size:1.8vmin;color:#9bd}
+  #teams{display:flex;gap:2vmin}
+  .team{width:20vmin;border:2px solid var(--c);background:#05050f;padding:1vmin;cursor:pointer;text-align:center;font-size:1.5vmin}
+  .team:hover,.team:focus{box-shadow:0 0 2vmin var(--c);outline:none;background:#0b0b1c}
+  .team img{width:100%;image-rendering:pixelated;display:block}
+  .team b{display:block;color:var(--c);font-size:1.8vmin;margin:.6vmin 0}
+  .team span{display:block;color:#aab;line-height:1.35}
+  #hint{font-size:1.5vmin;color:#778}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="960" height="720"></canvas>
+  <div id="select">
+    <h1>ANDROMEDA COLLISION</h1>
+    <p>The galaxies are merging. Choose your space force base.</p>
+    <div id="teams"></div>
+    <div id="hint">Turn: ← → / A D &nbsp; Thrust: ↑ / W &nbsp; Fire: Space &nbsp; Hyperspace: Shift &nbsp; Pause: P &nbsp; Pick a team: click or press 1–4</div>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
